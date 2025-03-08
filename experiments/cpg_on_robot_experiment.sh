@@ -1,6 +1,8 @@
+action_space_mode="cpg_default"
+
 python experiment.py \
     --algorithm.name="crossq.default" \
-    --algorithm.total_timesteps=10e4 \
+    --algorithm.total_timesteps=2e4 \
     --algorithm.evaluation_frequency=-1 \
     --algorithm.evaluation_episodes=17 \
     --algorithm.determine_fastest_cpu_for_gpu=False \
@@ -15,12 +17,14 @@ python experiment.py \
     --algorithm.batch_size=128 \
     --algorithm.logging_frequency=1000 \
     --algorithm.target_entropy=-6.0 \
+    --algorithm.action_space_mode=$action_space_mode \
+    --environment.action_space_mode=$action_space_mode \
     --environment.control_frequency_hz=40 \
-    --environment.name="honey_badger_jtp" \
+    --environment.name="honey_badger_ros" \
     --environment.nr_envs=1 \
-    --environment.command_type="random" \
-    --environment.reward_type="track_xy" \
-    --environment.control_type="pd" \
+    --environment.command_type="forward" \
+    --environment.reward_type="track_x" \
+    --environment.control_type="ik" \
     --environment.async_skip_percentage=0.0 \
     --environment.cycle_cpu_affinity=False \
     --environment.seed=3 \
@@ -31,11 +35,12 @@ python experiment.py \
     --environment.target_velocity=0.5 \
     --environment.initial_state_type="default" \
     --environment.add_goal_arrow=True \
-    --environment.trajectory_smoothing_type="one_euro_filter" \
-    --environment.command_sampling_type="only_setup" \
+    --environment.trajectory_smoothing_type="none" \
     --environment.trajectory_smoothing_history_length=1 \
     --environment.kp=60.0 \
     --environment.kd=3.0 \
+    --environment.central_pattern_generator_type="beat" \
+    --environment.command_sampling_type="only_setup" \
     --runner.mode="train" \
     --runner.track_console=True \
     --runner.track_tb=True \
@@ -43,5 +48,5 @@ python experiment.py \
     --runner.save_model=False \
     --runner.wandb_entity="WAND_ENTITY" \
     --runner.project_name="PROJECT_NAME" \
-    --runner.exp_name="JTP_OMNIDIRECTIONAL" \
+    --runner.exp_name="ROBOT_CPG_FORWARD" \
     --runner.notes=""

@@ -4,7 +4,7 @@ python experiment.py \
     --algorithm.evaluation_frequency=-1 \
     --algorithm.evaluation_episodes=17 \
     --algorithm.determine_fastest_cpu_for_gpu=False \
-    --algorithm.device="gpu" \
+    --algorithm.device="cpu" \
     --algorithm.learning_rate=0.005 \
     --algorithm.anneal_learning_rate=False \
     --algorithm.batch_renorm_warmup_steps=1000 \

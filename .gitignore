@@ -1,0 +1,41 @@
+*.egg-info
+__pycache__/
+.DS_Store
+.vscode
+.idea
+logs/
+wandb/
+commands.txt
+runs/
+experiments/*.sh
+!experiments/jtp_forward.sh
+!experiments/jtp_max.sh
+!experiments/jtp_omnidirectional.sh
+!experiments/jtp_on_robot_experiment.sh
+!experiments/cpg_forward.sh
+!experiments/cpg_max.sh
+!experiments/cpg_omnidirectional.sh
+!experiments/cpg_on_robot_experiment.sh
+
+
+# dependencies
+ros-frontend/node_modules
+ros-frontend/.pnp
+ros-frontend/.pnp.js
+
+# testing
+ros-frontend/coverage
+
+# production
+ros-frontend/build
+
+# misc
+ros-frontend/.DS_Store
+ros-frontend/.env.local
+ros-frontend/.env.development.local
+ros-frontend/.env.test.local
+ros-frontend/.env.production.local
+
+ros-frontend/npm-debug.log*
+ros-frontend/yarn-debug.log*
+ros-frontend/yarn-error.log*

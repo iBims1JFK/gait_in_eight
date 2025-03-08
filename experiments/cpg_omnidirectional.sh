@@ -28,7 +28,7 @@ python experiment.py \
     --environment.async_skip_percentage=0.0 \
     --environment.cycle_cpu_affinity=False \
     --environment.seed=3 \
-    --environment.render=True \
+    --environment.render=False \
     --environment.domain_randomization_perturbation_sampling_type="none" \
     --environment.domain_randomization_sampling_type="none" \
     --environment.observation_noise_type="none" \

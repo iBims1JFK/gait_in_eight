@@ -1,6 +1,6 @@
 python experiment.py \
     --algorithm.name="crossq.default" \
-    --algorithm.total_timesteps=10e4 \
+    --algorithm.total_timesteps=2e4 \
     --algorithm.evaluation_frequency=-1 \
     --algorithm.evaluation_episodes=17 \
     --algorithm.determine_fastest_cpu_for_gpu=False \
@@ -15,11 +15,13 @@ python experiment.py \
     --algorithm.batch_size=128 \
     --algorithm.logging_frequency=1000 \
     --algorithm.target_entropy=-6.0 \
+    --algorithm.action_space_mode="default" \
+    --environment.action_space_mode="default" \
     --environment.control_frequency_hz=40 \
-    --environment.name="honey_badger_jtp" \
+    --environment.name="honey_badger_ros" \
     --environment.nr_envs=1 \
-    --environment.command_type="random" \
-    --environment.reward_type="track_xy" \
+    --environment.command_type="forward" \
+    --environment.reward_type="track_x" \
     --environment.control_type="pd" \
     --environment.async_skip_percentage=0.0 \
     --environment.cycle_cpu_affinity=False \
@@ -43,5 +45,5 @@ python experiment.py \
     --runner.save_model=False \
     --runner.wandb_entity="WAND_ENTITY" \
     --runner.project_name="PROJECT_NAME" \
-    --runner.exp_name="JTP_OMNIDIRECTIONAL" \
+    --runner.exp_name="ROBOT_JTP_FORWARD" \
     --runner.notes=""

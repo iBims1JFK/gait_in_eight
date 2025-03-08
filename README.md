@@ -32,10 +32,12 @@ pip install -e .
 ```bash
 cd gait_in_eight/experiments
 # use on of the following commands
-bash jtp_experiment.sh
-bash cpg_experiment.sh
-bash cpg_omnidirectional_experiment.sh
-bash cpg_curriculum_experiment.sh
+bash jtp_forward.sh
+bash jtp_max.sh
+bash jtp_omnidirectional.sh
+bash cpg_forward.sh
+bash cpg_max.sh
+bash cpg_omnidirectional.sh
 ```
 
 
@@ -48,10 +50,10 @@ touch test.sh
 2. Add the following content to the test.sh file
 ```bash
 python experiment.py \
-    --algorithm.name=ppo.default \
-    --environment.name="unitree_a1" \
+    --algorithm.name=crossq.default \
+    --environment.name="honey_badger_jtp" \
     --environment.mode=test \
-    --environment.render=True \
+    --environment.render=False \
     --environment.add_goal_arrow=True \
     --runner.mode=test \
     --runner.load_model=model_best_jax
